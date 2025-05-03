@@ -2,6 +2,10 @@
 This is a Python-based spam detection system that uses machine learning to classify messages as spam or not spam (ham). 
 The system connects to a MySQL database for training data, uses TF-IDF vectorization for text processing, and employs logistic regression for classification.
 
+![Spam Detector Image](https://www.marcbrain.com/images/detector.jpg)
+
+
+
 # Table of Contents
     Features
 
@@ -106,10 +110,88 @@ conn = mysql.connector.connect(
 
 
 
+# API Documentation
+
+predict_message(msg)
+
+Classifies a given message as spam or not spam.
+
+**Parameters:**
+
+    msg (str): The message to classify
+
+**Returns:**
+
+    str: 'Spam' or 'Not Spam'
+
+**Example:**
+
+prediction = predict_message("Free vacation offer!")
+print(prediction)  # Output: 'Spam'
+
+
+# Training Data
+Training Data
+
+The model expects training data in the following format stored in a MySQL table called spam_training_data:
+
+| Column | Type | Description |
+|--------|------|-------------|
+| message | TEXT | The text message to learn |
+| label   | INT  | 0 for ham, 1 for spam |
+
+To improve accuracy, add more diverse examples of both spam and ham messages to your training data.
+
+
+# Testing
+
+The script includes some test cases that run when executed directly:
+
+    test_messages = [ "Free vacation to Bahamas! Click here to book.",
+    "Hi there, I'm following up on our last conversation.",
+    "Win cash instantly, limited time!" 
+    ]
+
+**To add your own tests, modify this section or create a separate test file.
+Contributing** 
+
+**Contributions are welcome! Here's how:**
+
+    Fork the project
+
+    Create your feature branch (git checkout -b feature/AmazingFeature)
+
+    Commit your changes (git commit -m 'Add some amazing feature')
+
+    Push to the branch (git push origin feature/AmazingFeature)
+
+    Open a Pull Request
+
+# License
+**Distributed under the MIT License. See LICENSE for more information.**
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The model expects training data in the following format stored in a MySQL table called spam_training_data:
 
 
 
